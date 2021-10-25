@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.6.0" />
+  </ItemGroup>
+  <ItemGroup Label="MLModelPredictPrice">
+    <None Include="MLModelPredictPrice.consumption.cs">
+      <DependentUpon>MLModelPredictPrice.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelPredictPrice.training.cs">
+      <DependentUpon>MLModelPredictPrice.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelPredictPrice.zip">
+      <DependentUpon>MLModelPredictPrice.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
